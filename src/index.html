@@ -1,35 +1,169 @@
-<!doctype html>
 
-<html>
+<!doctype html>
+<html lang="es">
+
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta
+        name="description"
+        content="Descubre El guerrero a la sombra del cerezo, la novela de David B. Gil que te transporta al Japón feudal."
+      />
+      <title>El guerrero a la sombra del cerezo | Una recomendación literaria</title>
+
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      />
+
+      <link rel="stylesheet" href="./assets/styles/main.scss" />
+
   </head>
+
+
   <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
-    <include src="./views/footer.html"></include>
+    <header class="site-header">
+      <a class="site-header__logo" href="#inicio">
+        Entre páginas
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <a href="#libro">El libro</a>
+        <a href="#motivos">Por qué leerlo</a>
+        <a href="#ficha">Ficha literaria</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero__content">
+          <p class="hero__eyebrow">UNA RECOMENDACIÓN LITERARIA</p>
+
+          <h1>El guerrero a la sombra del cerezo</h1>
+
+          <p class="hero__author">David B. Gil</p>
+
+          <p class="hero__description">
+            Un viaje al Japón feudal donde el honor, la memoria y la
+            búsqueda de la verdad se entrelazan entre secretos del pasado.
+          </p>
+
+          <a class="button" href="#libro">Descubre la historia</a>
+        </div>
+
+        <div class="hero__decoration" aria-hidden="true">
+          <span>桜</span>
+        </div>
+      </section>
+
+      <section class="book-section" id="libro">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">ENTRE HISTORIA Y LEYENDA</p>
+          <h2>Una historia que deja huella</h2>
+        </div>
+
+        <div class="book-section__content">
+          <div class="book-cover" aria-label="Portada tipográfica del libro">
+            <span class="book-cover__top">UNA NOVELA DE</span>
+            <span class="book-cover__title">
+              El guerrero
+              <br />
+              a la sombra
+              <br />
+              del cerezo
+            </span>
+            <span class="book-cover__author">DAVID B. GIL</span>
+            <span class="book-cover__symbol" aria-hidden="true">桜</span>
+          </div>
+
+          <div class="book-section__text">
+            <h3>Mucho más que una novela histórica</h3>
+
+            <p>
+              El Japón feudal es el escenario de una historia en la que
+              el pasado guarda preguntas y cada descubrimiento puede
+              cambiar la forma de entender el presente.
+            </p>
+
+            <p>
+              Si te atraen las historias de samuráis, los misterios y
+              los personajes que deben enfrentarse a su propio destino,
+              esta novela puede ser una gran compañera de lectura.
+            </p>
+
+            <a class="text-link" href="#ficha">Conoce los detalles →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="reasons-section" id="motivos">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">POR QUÉ RECOMENDARLA</p>
+          <h2>Tres motivos para leerla</h2>
+        </div>
+
+        <div class="reasons">
+          <article class="reason-card">
+            <span class="reason-card__number">01</span>
+            <h3>Un mundo fascinante</h3>
+            <p>
+              Descubre una ambientación inspirada en el Japón feudal,
+              sus costumbres y su código de honor.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-card__number">02</span>
+            <h3>Un misterio por resolver</h3>
+            <p>
+              La intriga invita a seguir las pistas y a descubrir
+              qué esconden los acontecimientos del pasado.
+            </p>
+          </article>
+
+          <article class="reason-card">
+            <span class="reason-card__number">03</span>
+            <h3>Personajes con profundidad</h3>
+            <p>
+              Una lectura para reflexionar sobre las decisiones,
+              la lealtad y las consecuencias de nuestros actos.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="book-details" id="ficha">
+        <div class="book-details__content">
+          <p class="section-heading__eyebrow">PARA TU PRÓXIMA LECTURA</p>
+          <h2>Ficha literaria</h2>
+
+          <dl class="book-details__list">
+            <div>
+              <dt>Título</dt>
+              <dd>El guerrero a la sombra del cerezo</dd>
+            </div>
+            <div>
+              <dt>Autor</dt>
+              <dd>David B. Gil</dd>
+            </div>
+            <div>
+              <dt>Género</dt>
+              <dd>Novela histórica</dd>
+            </div>
+            <div>
+              <dt>Ambientación</dt>
+              <dd>Japón feudal</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Entre páginas · Una recomendación para amantes de la lectura</p>
+      <p>Proyecto académico · Herramientas HTML y CSS II</p>
+    </footer>
+
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
   </body>

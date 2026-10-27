@@ -1,60 +1,276 @@
+
 @use "../variables";
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
+  font-family: variables.$font-body;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: variables.$color-background;
+  color: variables.$color-text;
+}
+
+a {
+  color: inherit;
+}
+
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 5%;
+  background-color: variables.$color-surface;
+
+  &__logo {
+    font-family: variables.$font-heading;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: variables.$color-primary;
+    }
+  }
+}
+
+.text-link:hover {
+  color: variables.$color-primary;
+}
+
+
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 6rem 8%;
+  background-color: variables.$color-primary-dark;
+  color: variables.$color-surface;
+}
+
+.hero__content {
+  max-width: 650px;
+}
+
+.hero__eyebrow,
+.section-heading__eyebrow {
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
+.hero h1,
+.section-heading h2,
+.book-details h2 {
+  font-family: variables.$font-heading;
+  line-height: 1.2;
+}
+
+.hero h1 {
+  max-width: 650px;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.hero__author {
+  font-size: 1.4rem;
+}
+
+.hero__description {
+  max-width: 550px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.25rem;
+  background-color: variables.$color-surface;
+  color: variables.$color-primary-dark;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: variables.$color-background;
+}
+
+.hero__decoration {
+  font-size: clamp(8rem, 20vw, 15rem);
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.book-section,
+.reasons-section {
+  padding: variables.$section-spacing 8%;
+}
+
+.section-heading {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.section-heading h2,
+.book-details h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.book-section__content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: variables.$container-width;
+  margin: 0 auto;
+}
+
+.book-cover {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  margin: 0;
+  justify-content: space-between;
+  gap: 1.5rem;
+  width: min(100%, 300px);
+  min-height: 420px;
   padding: 2rem;
-  font-family: variables.$font-family-sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  background-color: variables.$uoc-bg;
-  color: variables.$uoc-corporate;
+  background-color: variables.$color-primary-dark;
+  color: variables.$color-surface;
+  box-shadow: 0.75rem 0.75rem 0 variables.$color-border;
 }
 
-.uoc-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 2rem;
-  text-align: center;
-  background-color: #fff;
-  box-shadow:
-    0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.uoc-logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  max-width: 200px;
-  height: auto;
-
-  @media (min-width: variables.$mqMinWidth) {
-    max-width: none;
-  }
-}
-
-.uoc-title {
-  font-family: variables.$font-family-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: variables.$uoc-corporate;
-
-  @media (min-width: variables.$mqMinWidth) {
-    font-size: 36px;
-  }
-}
-
-.uoc-footer {
-  margin-top: 1.5rem;
+.book-cover__top,
+.book-cover__author {
   font-size: 0.75rem;
+  letter-spacing: 0.12em;
+}
+
+.book-cover__title {
+  font-family: variables.$font-heading;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.book-cover__symbol {
+  align-self: flex-end;
+  font-size: 3rem;
+}
+
+.book-section__text {
+  flex: 1 1 300px;
+  max-width: 550px;
+}
+
+.book-section__text h3,
+.reason-card h3 {
+  font-family: variables.$font-heading;
+  font-size: 1.5rem;
+}
+
+.text-link {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.reasons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: variables.$container-width;
+  margin: 0 auto;
+}
+
+
+.reason-card {
+  flex: 1 1 250px;
+  padding: 2rem;
+  border: 1px solid variables.$color-border;
+  background-color: variables.soft-color(variables.$color-primary, 90%);
+}
+
+
+.reason-card__number {
+  color: variables.$color-primary;
+  font-family: variables.$font-heading;
+  font-size: 2rem;
+}
+
+.book-details {
+  padding: variables.$section-spacing 8%;
+  background-color: variables.$color-primary-dark;
+  color: variables.$color-surface;
+}
+
+.book-details__content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.book-details__list div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 25%);
+}
+
+.book-details__list dt {
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.book-details__list dd {
+  margin: 0;
+}
+
+.site-footer {
+  padding: 2rem 5%;
+  background-color: variables.$color-text;
+  color: variables.$color-surface;
   text-align: center;
+  font-size: 0.85rem;
+}
+
+@media (width <= 600px) {
+  .site-header {
+    padding: 1.25rem 5%;
+  }
+
+  .site-nav {
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding: 4rem 6%;
+  }
+
+  .book-section,
+  .reasons-section,
+  .book-details {
+    padding: 3.5rem 6%;
+  }
 }
